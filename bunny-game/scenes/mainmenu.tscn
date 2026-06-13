@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://b7apqj4kb4lw3"]
+
+[ext_resource type="Script" uid="uid://bb8dtlnpqbjvs" path="res://scripts/mainmenu.gd" id="1_5mbse"]
+[ext_resource type="PackedScene" uid="uid://dhop2f7mltemn" path="res://scenes/transition.tscn" id="2_natt5"]
+
+[node name="mainmenu" type="Node2D" unique_id=760739448]
+script = ExtResource("1_5mbse")
+
+[node name="button_manager" type="Control" parent="." unique_id=1745834496]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="Button" parent="button_manager" unique_id=848796631]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -2.6
+anchor_right = 1.779
+anchor_bottom = -2.55
+offset_left = -80.0
+offset_top = 11.0
+offset_right = 7.8399963
+offset_bottom = 40.0
+text = "Start Game"
+metadata/_edit_use_anchors_ = true
+
+[node name="Options" type="Button" parent="button_manager" unique_id=737216782]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.6970003
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -34.0
+offset_right = -68.880005
+offset_bottom = -46.0
+text = "Options
+"
+
+[node name="Quit" type="Button" parent="button_manager" unique_id=982067080]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.218
+anchor_bottom = 0.2
+offset_left = -80.0
+offset_top = 27.0
+offset_right = 30.279999
+offset_bottom = 50.0
+text = "Quit
+"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=210232378]
+
+[node name="transition" parent="." unique_id=1986358168 instance=ExtResource("2_natt5")]
+visible = false
+offset_left = -575.0
+offset_top = -327.0
+offset_right = 577.0
+offset_bottom = 321.0
+
+[node name="fade_timer" type="Timer" parent="transition" unique_id=25101790]
+wait_time = 0.5
+
+[connection signal="pressed" from="button_manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="button_manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="button_manager/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="transition/fade_timer" to="." method="_on_fade_timer_timeout"]

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bg6015e1jxuy6"]
+
+[ext_resource type="PackedScene" uid="uid://dhop2f7mltemn" path="res://scenes/transition.tscn" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://8o0iws5dpdot" path="res://scripts/settings.gd" id="1_r6d6q"]
+
+[node name="Settings" type="Node2D" unique_id=1578588860]
+script = ExtResource("1_r6d6q")
+
+[node name="transition" parent="." unique_id=1986358168 instance=ExtResource("1_5p8wc")]
+visible = false

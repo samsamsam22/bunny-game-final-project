@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://babbtlugsprej"]
+
+[ext_resource type="Script" uid="uid://d4dakcfd6m75l" path="res://scripts/game.gd" id="1_0tnpc"]
+[ext_resource type="Script" uid="uid://cg7amgrbbp2m0" path="res://scripts/gamemanager.gd" id="1_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bx4udgxond4af" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://d3ddtyt7fc18u" path="res://assets/sprites/ground_sprites.png" id="2_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bxm421fwebbgm" path="res://scenes/platform.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://b6n3w78or1whw" path="res://scenes/carrot.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://coq1ss2a8fenr" path="res://scenes/killzone.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://cbd1jpece770r" path="res://scenes/sawbot.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://dhop2f7mltemn" path="res://scenes/transition.tscn" id="8_0tnpc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
+texture = ExtResource("2_p57ef")
+margins = Vector2i(4, 3)
+separation = Vector2i(8, 0)
+texture_region_size = Vector2i(64, 65)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gee14"]
+tile_size = Vector2i(64, 65)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_u5sy4")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
+distance = -1.0
+
+[sub_resource type="Animation" id="Animation_lnu2h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1913, 72)]
+}
+
+[sub_resource type="Animation" id="Animation_lbhrr"]
+resource_name = "movingplatform"
+length = 1.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1913, 72), Vector2(-2215, 75)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iywne"]
+_data = {
+&"RESET": SubResource("Animation_lnu2h"),
+&"movingplatform": SubResource("Animation_lbhrr")
+}
+
+[node name="Game" type="Node2D" unique_id=1854284418]
+script = ExtResource("1_0tnpc")
+
+[node name="gamemanager" type="Node" parent="." unique_id=1661330151]
+unique_name_in_owner = true
+script = ExtResource("1_u5sy4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="gamemanager" unique_id=916332508]
+follow_viewport_enabled = true
+
+[node name="score_label" type="Label" parent="gamemanager" unique_id=267165063]
+offset_left = -1813.0
+offset_top = -152.0
+offset_right = -1670.0
+offset_bottom = -129.0
+text = "Carrots: "
+autowrap_mode = 1
+
+[node name="Player" parent="." unique_id=1292774031 instance=ExtResource("1_uwrxv")]
+z_index = 5
+position = Vector2(-1574, 8)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1433346016]
+position = Vector2(-1, -49)
+scale = Vector2(-0.30014876, 1.0809287)
+limit_bottom = 700
+position_smoothing_enabled = true
+
+[node name="TileMap" type="TileMap" parent="." unique_id=639310165]
+tile_set = SubResource("TileSet_gee14")
+format = 2
+layer_0/tile_data = PackedInt32Array(131044, 0, 0, 131045, 0, 0, 131046, 0, 0, 131047, 0, 0, 131048, 0, 0, 131049, 0, 0, 131050, 131072, 0, 131051, 131072, 0, 131052, 0, 0, 131053, 0, 0, 131057, 131072, 0, 131058, 0, 0, 131059, 0, 0, 131060, 0, 0, 131054, 131072, 0, 131055, 131072, 0, 131056, 131072, 0, 65518, 131072, 0, 65519, 131072, 0, 65520, 65536, 0, -18, 65536, 0, -17, 65536, 0, 65521, 65536, 0, 65515, 0, 0, 65514, 0, 0, 393203, 65536, 0, 393202, 65536, 0, 393201, 65536, 0, 393200, 65536, 0, 393199, 65536, 0, 393204, 131072, 0, 327668, 65536, 0, 327662, 65536, 0, 393198, 131072, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 393212, 0, 0, 393213, 0, 0, 262143, 0, 0, 196608, 0, 0, 131074, 0, 0, 65540, 0, 0, 2, 0, 0, -1, 0, 0, -2, 0, 0, -65536, 0, 0, 131035, 0, 0, 131034, 0, 0, 131033, 0, 0, 131032, 0, 0, 131036, 0, 0, 589797, 0, 0, 589798, 0, 0, 589799, 0, 0, 589800, 0, 0, 589801, 0, 0, 589802, 0, 0, 589803, 0, 0, 589804, 0, 0, 589805, 0, 0, 589806, 0, 0, 589807, 0, 0, 589808, 0, 0, 589809, 0, 0, 589810, 0, 0, 589811, 0, 0, 589812, 0, 0, 589813, 0, 0, 589814, 0, 0, 589787, 0, 0, 589788, 0, 0, 589786, 0, 0, 589784, 0, 0, 589785, 0, 0, 458733, 0, 0, 458732, 0, 0)
+
+[node name="killzone" parent="." unique_id=783299780 instance=ExtResource("5_iywne")]
+position = Vector2(-815, 648)
+scale = Vector2(33.04, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=2067492349]
+shape = SubResource("WorldBoundaryShape2D_p57ef")
+
+[node name="Carrots" type="Node" parent="." unique_id=1068596631]
+
+[node name="carrot" parent="Carrots" unique_id=727129782 instance=ExtResource("4_lbhrr")]
+position = Vector2(-2351, -46)
+
+[node name="carrot2" parent="Carrots" unique_id=1803083023 instance=ExtResource("4_lbhrr")]
+position = Vector2(-49, -98)
+
+[node name="carrot3" parent="Carrots" unique_id=2089216035 instance=ExtResource("4_lbhrr")]
+position = Vector2(-412, 265)
+
+[node name="Platforms" type="Node" parent="." unique_id=1099186835]
+
+[node name="platform" parent="Platforms" unique_id=1679261519 instance=ExtResource("3_lnu2h")]
+position = Vector2(-1732, -44)
+
+[node name="platform2" parent="Platforms" unique_id=1046697903 instance=ExtResource("3_lnu2h")]
+position = Vector2(-1913, 72)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/platform2" unique_id=2089740987]
+libraries/ = SubResource("AnimationLibrary_iywne")
+autoplay = &"movingplatform"
+
+[node name="sawbot" parent="." unique_id=244770658 instance=ExtResource("6_p57ef")]
+position = Vector2(-947, 317)
+
+[node name="Label" type="Label" parent="." unique_id=624066528]
+offset_left = -1460.0
+offset_top = -183.0
+offset_right = -1129.0
+offset_bottom = -134.0
+text = "Test test TEST
+FUCK YOU BUNNY FUCKING DIE"
+
+[node name="transition" parent="." unique_id=1986358168 instance=ExtResource("8_0tnpc")]
+z_index = 10
+offset_left = -2153.0
+offset_top = -364.0
+offset_right = -1001.0
+offset_bottom = 284.0
