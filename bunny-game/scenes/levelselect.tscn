@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://tbfeidchhfdh"]
+
+[ext_resource type="Script" uid="uid://bre7ojjewmrpv" path="res://scripts/levelselect.gd" id="1_xuh2y"]
+[ext_resource type="PackedScene" uid="uid://dhop2f7mltemn" path="res://scenes/transition.tscn" id="3_4kdbh"]
+[ext_resource type="PackedScene" uid="uid://c2qwrnvcuteuw" path="res://scenes/level_select_button.tscn" id="3_nqy8e"]
+
+[node name="Levelmanager" type="Node2D" unique_id=1078358497]
+script = ExtResource("1_xuh2y")
+
+[node name="Levelselect" type="Node2D" parent="." unique_id=1767096082]
+
+[node name="Label" type="Label" parent="Levelselect" unique_id=771962067]
+offset_right = 1151.0
+offset_bottom = 195.0
+theme_override_font_sizes/font_size = 140
+text = "LEVEL SELECT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelSelectButton" parent="Levelselect" unique_id=1116436059 instance=ExtResource("3_nqy8e")]
+offset_left = 172.0
+offset_top = 261.0
+offset_right = 262.0
+offset_bottom = 351.0
+
+[node name="LevelSelectButton2" parent="Levelselect" unique_id=1655249395 instance=ExtResource("3_nqy8e")]
+offset_left = 342.0
+offset_top = 263.0
+offset_right = 432.0
+offset_bottom = 353.0
+
+[node name="LevelSelectButton3" parent="Levelselect" unique_id=1925191035 instance=ExtResource("3_nqy8e")]
+offset_left = 541.0
+offset_top = 258.0
+offset_right = 631.0
+offset_bottom = 348.0
+
+[node name="LevelSelectButton4" parent="Levelselect" unique_id=1585656809 instance=ExtResource("3_nqy8e")]
+offset_left = 750.0
+offset_top = 261.0
+offset_right = 840.0
+offset_bottom = 351.0
+
+[node name="LevelSelectButton5" parent="Levelselect" unique_id=1671505469 instance=ExtResource("3_nqy8e")]
+offset_left = 923.0
+offset_top = 270.0
+offset_right = 1013.0
+offset_bottom = 360.0
+
+[node name="transition" parent="Levelselect" unique_id=1986358168 instance=ExtResource("3_4kdbh")]
+visible = false
+offset_left = -3.0
+offset_top = -1.0
+offset_right = 1149.0
+offset_bottom = 647.0

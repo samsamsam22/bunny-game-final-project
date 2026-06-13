@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://2jl3g7rlbid7"]
+
+[ext_resource type="Script" uid="uid://7wqarvomjv3n" path="res://scripts/finish_level.gd" id="1_nrl24"]
+[ext_resource type="Texture2D" uid="uid://c5n616wdhosdo" path="res://assets/sprites/finishplaceholder.png" id="2_0f547"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_foq6e"]
+radius = 27.166155
+
+[node name="FinishLevel" type="Area2D" unique_id=549451238]
+collision_mask = 2
+script = ExtResource("1_nrl24")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=330879940]
+position = Vector2(0, -31)
+texture = ExtResource("2_0f547")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=950273880]
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_foq6e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
