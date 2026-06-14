@@ -3,8 +3,50 @@
 [ext_resource type="PackedScene" uid="uid://dhop2f7mltemn" path="res://scenes/transition.tscn" id="1_5p8wc"]
 [ext_resource type="Script" uid="uid://8o0iws5dpdot" path="res://scripts/settings.gd" id="1_r6d6q"]
 
+[sub_resource type="GDScript" id="GDScript_r6d6q"]
+script/source = "extends CheckButton
+
+func _on_toggled(toggled_on: bool) -> void:
+	if toggled_on == true:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		
+"
+
 [node name="Settings" type="Node2D" unique_id=1578588860]
 script = ExtResource("1_r6d6q")
 
 [node name="transition" parent="." unique_id=1986358168 instance=ExtResource("1_5p8wc")]
 visible = false
+
+[node name="fade_timer" type="Timer" parent="transition" unique_id=1607257772]
+
+[node name="fullscreencontrol" type="CheckButton" parent="." unique_id=1749167698]
+offset_left = 690.0
+offset_top = 324.0
+offset_right = 740.0
+offset_bottom = 368.00003
+scale = Vector2(3, 3)
+theme_override_font_sizes/font_size = 50
+script = SubResource("GDScript_r6d6q")
+
+[node name="Label" type="Label" parent="." unique_id=371073728]
+offset_left = 239.0
+offset_top = 349.0
+offset_right = 645.0
+offset_bottom = 418.0
+theme_override_font_sizes/font_size = 50
+text = "Windowed mode"
+
+[node name="back" type="Button" parent="." unique_id=1497845582]
+offset_left = 360.0
+offset_top = 546.0
+offset_right = 773.0
+offset_bottom = 620.0
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[connection signal="toggled" from="fullscreencontrol" to="fullscreencontrol" method="_on_toggled"]
+[connection signal="pressed" from="back" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

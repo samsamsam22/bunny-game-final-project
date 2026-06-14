@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://babbtlugsprej"]
+[gd_scene format=3 uid="uid://c2dlw1wixymya"]
 
-[ext_resource type="Script" uid="uid://d4dakcfd6m75l" path="res://scripts/game.gd" id="1_344tg"]
-[ext_resource type="Script" uid="uid://cg7amgrbbp2m0" path="res://scripts/gamemanager.gd" id="2_1diu1"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_344tg"]
+[ext_resource type="Script" path="res://scripts/gamemanager.gd" id="2_1diu1"]
 [ext_resource type="PackedScene" uid="uid://bx4udgxond4af" path="res://scenes/player.tscn" id="3_j0jco"]
 [ext_resource type="Texture2D" uid="uid://c5fr7gc7nga2q" path="res://assets/sprites/ground_sprites_fin.png" id="4_gprjd"]
 [ext_resource type="PackedScene" uid="uid://coq1ss2a8fenr" path="res://scenes/killzone.tscn" id="5_6j3rm"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cbd1jpece770r" path="res://scenes/sawbot.tscn" id="8_ub3y0"]
 [ext_resource type="PackedScene" uid="uid://dhop2f7mltemn" path="res://scenes/transition.tscn" id="9_u8tc4"]
 [ext_resource type="PackedScene" uid="uid://2jl3g7rlbid7" path="res://scenes/finish_level.tscn" id="10_1diu1"]
+[ext_resource type="PackedScene" uid="uid://cj2yomvvhhu1p" path="res://scenes/dashreplenish.tscn" id="11_j0jco"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtaks"]
 texture = ExtResource("4_gprjd")
@@ -277,7 +278,7 @@ script = ExtResource("2_1diu1")
 
 [node name="Player" parent="." unique_id=1292774031 instance=ExtResource("3_j0jco")]
 z_index = 5
-position = Vector2(-1561, -91)
+position = Vector2(-1392, 12)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1433346016]
 position = Vector2(-1, -49)
@@ -321,7 +322,7 @@ libraries/ = SubResource("AnimationLibrary_iywne")
 autoplay = &"movingplatform"
 
 [node name="sawbot" parent="." unique_id=244770658 instance=ExtResource("8_ub3y0")]
-position = Vector2(-947, 317)
+position = Vector2(-955, 325)
 
 [node name="Label" type="Label" parent="." unique_id=624066528]
 offset_left = -1460.0
@@ -341,3 +342,6 @@ offset_bottom = 284.0
 
 [node name="FinishLevel" parent="." unique_id=549451238 instance=ExtResource("10_1diu1")]
 position = Vector2(-1681, 340)
+
+[node name="dashreplenish" parent="." unique_id=718052403 instance=ExtResource("11_j0jco")]
+position = Vector2(-1913, -134)
