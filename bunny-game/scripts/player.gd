@@ -74,9 +74,9 @@ func _physics_process(delta: float) -> void:
 		
 func _update_dash_visuals() -> void:
 	if can_dash:
-		modulate = Color("ffff")
+		player.play("fall")
 	else:
-		modulate = Color("cfd1d1ff")
+		player.play("dash")
 
 func _dash_logic(delta: float) -> void:
 	var input_dir: Vector2 = Vector2(

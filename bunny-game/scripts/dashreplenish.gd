@@ -1,5 +1,6 @@
 extends Area2D
 
+#this isnt difficult to understand, if you touch it it changes your can dash value to true and starts a replenish timer for itself
 var active: bool = true
 
 func _on_body_entered(body: Node2D) -> void:
