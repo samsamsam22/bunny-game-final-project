@@ -6,11 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c5fr7gc7nga2q" path="res://assets/sprites/ground_sprites_fin.png" id="4_gprjd"]
 [ext_resource type="PackedScene" uid="uid://coq1ss2a8fenr" path="res://scenes/killzone.tscn" id="5_6j3rm"]
 [ext_resource type="PackedScene" uid="uid://b6n3w78or1whw" path="res://scenes/carrot.tscn" id="6_sjybn"]
-[ext_resource type="PackedScene" uid="uid://bxm421fwebbgm" path="res://scenes/platform.tscn" id="7_s0nv6"]
-[ext_resource type="PackedScene" uid="uid://cbd1jpece770r" path="res://scenes/sawbot.tscn" id="8_ub3y0"]
 [ext_resource type="PackedScene" uid="uid://dhop2f7mltemn" path="res://scenes/transition.tscn" id="9_u8tc4"]
 [ext_resource type="PackedScene" uid="uid://2jl3g7rlbid7" path="res://scenes/finish_level.tscn" id="10_1diu1"]
-[ext_resource type="PackedScene" uid="uid://cj2yomvvhhu1p" path="res://scenes/dashreplenish.tscn" id="11_j0jco"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vtaks"]
 texture = ExtResource("4_gprjd")
@@ -231,44 +228,6 @@ sources/0 = SubResource("TileSetAtlasSource_vtaks")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -1.0
 
-[sub_resource type="Animation" id="Animation_lnu2h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1913, 72)]
-}
-
-[sub_resource type="Animation" id="Animation_lbhrr"]
-resource_name = "movingplatform"
-length = 1.5
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-1913, 72), Vector2(-2215, 75)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_iywne"]
-_data = {
-&"RESET": SubResource("Animation_lnu2h"),
-&"movingplatform": SubResource("Animation_lbhrr")
-}
-
 [node name="Game" type="Node2D" unique_id=1854284418]
 script = ExtResource("1_344tg")
 
@@ -278,7 +237,7 @@ script = ExtResource("2_1diu1")
 
 [node name="Player" parent="." unique_id=1292774031 instance=ExtResource("3_j0jco")]
 z_index = 5
-position = Vector2(-1392, 12)
+position = Vector2(-3372, 436)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1433346016]
 position = Vector2(-1, -49)
@@ -289,7 +248,7 @@ position_smoothing_enabled = true
 [node name="TileMap" type="TileMap" parent="." unique_id=639310165]
 tile_set = SubResource("TileSet_kvpfn")
 format = 2
-layer_0/tile_data = PackedInt32Array(131044, 65536, 0, 131045, 0, 0, 131046, 0, 0, 131047, 0, 0, 131048, 0, 0, 131049, 0, 0, 131050, 0, 0, 131036, 131072, 0, 131035, 0, 0, 131034, 65536, 0, 131051, 0, 0, 131052, 0, 0, 131053, 0, 0, 131054, 0, 0, 131055, 0, 0, 196595, 65536, 0, 196596, 131072, 0, 393203, 131072, 1, 393202, 196608, 0, 393201, 196608, 0, 393200, 196608, 0, 393199, 65536, 1, 327667, 196608, 0, 327663, 196608, 0, 393211, 131072, 0, 393206, 65536, 0, 393207, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 262141, 65536, 0, 131072, 65536, 0, 262142, 131072, 0, 458750, 65536, 0, 458751, 131072, 0, 327681, 65536, 1, 327682, 131072, 1, 196612, 65536, 0, 196613, 131072, 0, 131073, 131072, 0, 65539, 262144, 0, 65540, 327680, 0, 65535, 262144, 0, 0, 327680, 0, 458714, 65536, 0, 458715, 0, 0, 458716, 0, 0, 458717, 0, 0, 458723, 65536, 0, 458724, 0, 0, 458725, 0, 0, 458726, 0, 0, 458727, 131072, 0, 524265, 65536, 0, 524266, 0, 0, 524267, 0, 0, 524268, 0, 0, 524269, 0, 0, 524270, 131072, 0, 589809, 65536, 0, 589810, 0, 0, 589811, 0, 0, 589812, 0, 0, 589813, 131072, 0, 458718, 131072, 0)
+layer_0/tile_data = PackedInt32Array(524238, 0, 0, 524237, 0, 0, 524236, 0, 0, 524235, 0, 0, 524234, 0, 0, 589771, 196608, 0, 655307, 196608, 0, 589773, 196608, 0, 655309, 196608, 0, 655308, 196608, 0, 589772, 196608, 0, 720844, 196608, 0, 589774, 196608, 0, 589770, 196608, 0, 786380, 196608, 0, 524239, 131072, 0, 524233, 65536, 0, 720845, 196608, 0, 655306, 196608, 0, 655310, 196608, 0, 720843, 196608, 0, 786379, 196608, 0, 851915, 196608, 0, 524242, 65536, 0, 524246, 131072, 0, 524243, 0, 0, 524244, 0, 0, 524245, 0, 0, 458712, 65536, 0, 458713, 0, 0, 458714, 0, 0, 327643, 196608, 0, 393179, 196608, 0, 458715, 196608, 0, 524251, 196608, 0, 589787, 196608, 0, 655323, 196608, 0, 720859, 196608, 0, 524250, 196608, 0, 589786, 196608, 0, 655322, 196608, 0, 720858, 196608, 0, 524249, 196608, 0, 589785, 196608, 0, 655321, 196608, 0, 720857, 196608, 0, 786394, 196608, 0, 851930, 196608, 0, 917466, 196608, 0, 786395, 196608, 0, 851931, 196608, 0, 917467, 196608, 0, 196572, 196608, 0, 262108, 196608, 0, 327644, 196608, 0, 393180, 196608, 0, 458716, 196608, 0, 524252, 196608, 0, 589788, 196608, 0, 655324, 196608, 0, 720860, 196608, 0, 786396, 196608, 0, 851932, 196608, 0, 917468, 196608, 0, 851933, 196608, 0, 786397, 196608, 0, 720861, 196608, 0, 655325, 196608, 0, 589789, 196608, 0, 524253, 196608, 0, 458717, 196608, 0, 393181, 196608, 0, 327645, 196608, 0, 262109, 196608, 0, 196573, 196608, 0, 131037, 196608, 0, 65501, 196608, 0, -35, 196608, 0, 131036, 196608, 0, 65500, 196608, 0, 196571, 196608, 0, 262107, 196608, 0, 131035, 196608, 0, 262102, 131072, 0, 262099, 65536, 0, 262100, 0, 0, 262101, 0, 0, 131024, 131072, 0, 131023, 0, 0, 131022, 0, 0, 131021, 65536, 0, 65483, 131072, 0, 65482, 65536, 0, -58, 65536, 0, -57, 131072, 0, -65597, 65536, 0, -65596, 131072, 0, -131135, 65536, 0, -131134, 131072, 0, -196666, 65536, 0, -196665, 131072, 0, -262197, 65536, 0, -262196, 131072, 0, -131119, 65536, 0, -131118, 131072, 0, -196650, 65536, 0, -196649, 131072, 0, -65570, 0, 0, -33, 196608, 0, -32, 196608, 0, 65504, 196608, 0, -34, 196608, 0, 65502, 196608, 0, 131038, 196608, 0, 196574, 196608, 0, 262110, 196608, 0, 327646, 196608, 0, 393182, 196608, 0, 458718, 196608, 0, 524254, 196608, 0, 589790, 196608, 0, 655326, 196608, 0, -65569, 0, 0, 65503, 196608, 0, 131039, 196608, 0, 196575, 196608, 0, 262111, 196608, 0, 327647, 196608, 0, 393183, 196608, 0, 458719, 196608, 0, 524255, 196608, 0, 589791, 196608, 0, 655327, 196608, 0, -65568, 196608, 0, 131040, 196608, 0, 196576, 196608, 0, 262112, 196608, 0, 327648, 196608, 0, 393184, 196608, 0, 458720, 196608, 0, 524256, 196608, 0, 589792, 196608, 0, 655328, 196608, 0, -65567, 196608, 0, -31, 196608, 0, 65505, 196608, 0, 131041, 196608, 0, 196577, 196608, 0, 262113, 196608, 0, 327649, 196608, 0, 393185, 196608, 0, 458721, 196608, 0, 524257, 196608, 0, 589793, 196608, 0, 655329, 196608, 0, -65566, 196608, 0, -30, 196608, 0, 65506, 196608, 0, 131042, 196608, 0, 196578, 196608, 0, 262114, 196608, 0, 327650, 196608, 0, 393186, 196608, 0, 458722, 196608, 0, 524258, 196608, 0, 589794, 196608, 0, 655330, 196608, 0, -65565, 196608, 0, -29, 196608, 0, 65507, 196608, 0, 131043, 196608, 0, 196579, 196608, 0, 262115, 196608, 0, 327651, 196608, 0, 393187, 196608, 0, 458723, 196608, 0, 524259, 196608, 0, 589795, 196608, 0, 655331, 196608, 0, -65564, 196608, 0, -28, 196608, 0, 65508, 196608, 0, 131044, 196608, 0, 196580, 196608, 0, 262116, 196608, 0, 327652, 196608, 0, 393188, 196608, 0, 458724, 196608, 0, 524260, 196608, 0, 589796, 196608, 0, 655332, 196608, 0, -65563, 196608, 0, -27, 196608, 0, 65509, 196608, 0, 131045, 196608, 0, 196581, 196608, 0, 262117, 196608, 0, 327653, 196608, 0, 393189, 196608, 0, 458725, 196608, 0, 524261, 196608, 0, 589797, 196608, 0, 655333, 196608, 0, -65562, 196608, 0, -26, 196608, 0, 65510, 196608, 0, 131046, 196608, 0, 196582, 196608, 0, 262118, 196608, 0, 327654, 196608, 0, 393190, 196608, 0, 458726, 196608, 0, 524262, 196608, 0, 589798, 196608, 0, 655334, 196608, 0, 720862, 196608, 0, 786398, 196608, 0, 720863, 196608, 0, 786399, 196608, 0, 720864, 196608, 0, 786400, 196608, 0, 720865, 196608, 0, 786401, 196608, 0, 720866, 196608, 0, 786402, 196608, 0, 720867, 196608, 0, 786403, 196608, 0, 720868, 196608, 0, 786404, 196608, 0, 720869, 196608, 0, 786405, 196608, 0, 720870, 196608, 0, 786406, 196608, 0, -131103, 0, 0, -131102, 0, 0, -131101, 196608, 0, -131100, 196608, 0, -131099, 196608, 0, -131098, 196608, 0, -196635, 0, 0, -196634, 0, 0, -196636, 0, 0, -196637, 0, 0, -131104, 0, 0, -131097, 0, 0, -65561, 196608, 0, -25, 196608, 0, 65511, 196608, 0, 131047, 196608, 0, 196583, 196608, 0, 262119, 196608, 0, -131096, 0, 0, -65560, 196608, 0, -24, 196608, 0, 65512, 196608, 0, 131048, 196608, 0, 196584, 196608, 0, 262120, 196608, 0, 327655, 196608, 0, 393191, 196608, 0, 458727, 196608, 0, 327656, 196608, 0, 393192, 196608, 0, 458728, 196608, 0, -23, 0, 0, 65513, 196608, 0, 131049, 196608, 0, 196585, 196608, 0, 262121, 196608, 0, 327657, 196608, 0, 393193, 196608, 0, 458729, 196608, 0, 524263, 196608, 0, 589799, 196608, 0, 655335, 196608, 0, 720871, 196608, 0, 786407, 196608, 0, 851943, 196608, 0, 524264, 196608, 0, 589800, 196608, 0, 655336, 196608, 0, 720872, 196608, 0, 786408, 196608, 0, 851944, 196608, 0, 524265, 196608, 0, 589801, 196608, 0, 655337, 196608, 0, 720873, 196608, 0, 786409, 196608, 0, 851945, 196608, 0, 393198, 131072, 0, 393194, 196608, 0, 393195, 196608, 0, 393196, 196608, 0, 393197, 196608, 0, 589806, 196608, 0, 589805, 196608, 0, 589804, 196608, 0, 589803, 196608, 0, 589802, 196608, 0, 589807, 327680, 0, 327661, 0, 0, 327660, 196608, 0, 327659, 196608, 0, 327658, 196608, 0, 262122, 196608, 0, 262123, 196608, 0, 262124, 0, 0, 196586, 196608, 0, 196587, 0, 0, 131050, 0, 0, 196592, 65536, 0, 196593, 131072, 0, 131061, 0, 0, 131060, 65536, 0, 131062, 131072, 0, 196612, 65536, 0, 196615, 131072, 0, 196613, 0, 0, 196614, 0, 0, 65531, 65536, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 131072, 0, 131068, 196608, 0, 131069, 196608, 0, 131070, 196608, 0, 196605, 196608, 0, 393209, 65536, 0, 393212, 131072, 0, 393210, 0, 0, 393211, 0, 0, 458752, 65536, 0, 458754, 131072, 0, 458753, 0, 0, 327683, 0, 0, 65537, 0, 0)
 
 [node name="killzone" parent="." unique_id=783299780 instance=ExtResource("5_6j3rm")]
 position = Vector2(-815, 648)
@@ -301,36 +260,24 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 [node name="Carrots" type="Node" parent="." unique_id=1068596631]
 
 [node name="carrot" parent="Carrots" unique_id=727129782 instance=ExtResource("6_sjybn")]
-position = Vector2(-2351, -46)
+position = Vector2(-1735, -364)
 
 [node name="carrot2" parent="Carrots" unique_id=1803083023 instance=ExtResource("6_sjybn")]
-position = Vector2(-49, -98)
+position = Vector2(76, 379)
 
 [node name="carrot3" parent="Carrots" unique_id=2089216035 instance=ExtResource("6_sjybn")]
-position = Vector2(-412, 265)
+position = Vector2(-1305, 443)
 
 [node name="Platforms" type="Node" parent="." unique_id=1099186835]
 
-[node name="platform" parent="Platforms" unique_id=1679261519 instance=ExtResource("7_s0nv6")]
-position = Vector2(-1732, -44)
-
-[node name="platform2" parent="Platforms" unique_id=1046697903 instance=ExtResource("7_s0nv6")]
-position = Vector2(-1913, 72)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/platform2" unique_id=2089740987]
-libraries/ = SubResource("AnimationLibrary_iywne")
-autoplay = &"movingplatform"
-
-[node name="sawbot" parent="." unique_id=244770658 instance=ExtResource("8_ub3y0")]
-position = Vector2(-955, 325)
-
 [node name="Label" type="Label" parent="." unique_id=624066528]
-offset_left = -1460.0
-offset_top = -183.0
-offset_right = -1129.0
-offset_bottom = -134.0
-text = "Test test TEST
-FUCK YOU BUNNY FUCKING DIE"
+offset_left = -3488.0
+offset_top = 284.0
+offset_right = -3157.0
+offset_bottom = 333.0
+text = "Hello. Welcome to the game
+use the ARROW KEYS or WASD to move"
+metadata/_edit_use_anchors_ = true
 
 [node name="transition" parent="." unique_id=1986358168 instance=ExtResource("9_u8tc4")]
 visible = false
@@ -341,7 +288,23 @@ offset_right = -1001.0
 offset_bottom = 284.0
 
 [node name="FinishLevel" parent="." unique_id=549451238 instance=ExtResource("10_1diu1")]
-position = Vector2(-1681, 340)
+position = Vector2(-161, -28)
 
-[node name="dashreplenish" parent="." unique_id=718052403 instance=ExtResource("11_j0jco")]
-position = Vector2(-1913, -134)
+[node name="Label2" type="Label" parent="." unique_id=2093842711]
+offset_left = -2899.0
+offset_top = 251.0
+offset_right = -2503.0
+offset_bottom = 300.0
+text = "Press SPACE to dash
+Your direction depends on the keys you're pressing"
+
+[node name="Label3" type="Label" parent="." unique_id=1075345705]
+offset_left = -1985.0
+offset_top = -573.0
+offset_right = -1717.0
+offset_bottom = -446.0
+text = "carrots are collectables
+every level has 3 carrots
+get all 3 to get a star at the end
+finishing the level in a given time limit 
+also gives you a star"

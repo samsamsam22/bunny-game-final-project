@@ -57,3 +57,7 @@ speed_scale = 1.5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435126341]
 position = Vector2(-2, -30)
 shape = SubResource("CircleShape2D_lj8jo")
+
+[node name="coyotetimer" type="Timer" parent="." unique_id=255121271]
+wait_time = 0.15
+one_shot = true

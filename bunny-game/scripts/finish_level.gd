@@ -1,7 +1,6 @@
 extends Area2D
 
 
-
 func _on_body_entered(body: Node2D):
 	Levelselect.current_level += 1
 	Levelselect._unlock_level(Levelselect.current_level)
