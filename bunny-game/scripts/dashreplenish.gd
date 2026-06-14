@@ -10,10 +10,10 @@ func _on_body_entered(body: Node2D) -> void:
 		body.can_dash = true
 		active = false
 		
-		$timeranim.play("timer")
+		$AnimatedSprite2D.play("timer")
 		$replenishtimer.start()
 
 func _on_replenishtimer_timeout() -> void:
 	active = true
-	$timeranim.play("RESET")
+	$AnimatedSprite2D.play("default")
 	

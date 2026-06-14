@@ -1,54 +1,62 @@
 [gd_scene format=3 uid="uid://cj2yomvvhhu1p"]
 
 [ext_resource type="Script" uid="uid://byrn0xtlqv12c" path="res://scripts/dashreplenish.gd" id="1_ermfd"]
-[ext_resource type="Texture2D" uid="uid://caqei0ywe5d6a" path="res://assets/sprites/dashreplenishplaceholder.png" id="1_pro3n"]
+[ext_resource type="Texture2D" uid="uid://dx0rhfvvrmt8k" path="res://assets/sprites/dashreplenish.png" id="2_ermfd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wimyw"]
-radius = 40.112343
+radius = 20.024984
 
-[sub_resource type="Animation" id="Animation_ermfd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:skew")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_wimyw"]
+atlas = ExtResource("2_ermfd")
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="Animation" id="Animation_wimyw"]
-resource_name = "timer"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:skew")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.569051]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sgf6"]
+atlas = ExtResource("2_ermfd")
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8sgf6"]
-_data = {
-&"RESET": SubResource("Animation_ermfd"),
-&"timer": SubResource("Animation_wimyw")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_m05ku"]
+atlas = ExtResource("2_ermfd")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr1l6"]
+atlas = ExtResource("2_ermfd")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu4xv"]
+atlas = ExtResource("2_ermfd")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7os83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wimyw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sgf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m05ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr1l6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu4xv")
+}],
+"loop": false,
+"name": &"timer",
+"speed": 5.0
+}]
 
 [node name="dashreplenish" type="Area2D" unique_id=718052403]
 collision_mask = 2
 script = ExtResource("1_ermfd")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=65630443]
-texture = ExtResource("1_pro3n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2071031389]
 shape = SubResource("CircleShape2D_wimyw")
@@ -57,8 +65,12 @@ shape = SubResource("CircleShape2D_wimyw")
 wait_time = 3.0
 one_shot = true
 
-[node name="timeranim" type="AnimationPlayer" parent="." unique_id=1265458364]
-libraries/ = SubResource("AnimationLibrary_8sgf6")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1868061450]
+sprite_frames = SubResource("SpriteFrames_7os83")
+animation = &"timer"
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="replenishtimer" to="." method="_on_replenishtimer_timeout"]

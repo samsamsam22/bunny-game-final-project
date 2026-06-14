@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://b6n3w78or1whw"]
 
-[ext_resource type="Texture2D" uid="uid://7dtlalt15omu" path="res://assets/sprites/placeholdercarrot.png" id="1_btq7l"]
-[ext_resource type="Script" uid="uid://b48l8x4c4e5gx" path="res://scripts/carrot.gd" id="1_elckd"]
+[ext_resource type="Script" path="res://scripts/carrot.gd" id="1_elckd"]
+[ext_resource type="Texture2D" uid="uid://cpt2ypkm0l0h2" path="res://assets/sprites/carrot.png" id="2_elckd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_elckd"]
-radius = 39.0
+radius = 36.013885
 
 [node name="carrot" type="Area2D" unique_id=727129782]
 collision_mask = 2
 script = ExtResource("1_elckd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1935397029]
-texture = ExtResource("1_btq7l")
+texture = ExtResource("2_elckd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=374112427]
-position = Vector2(5, 7)
+position = Vector2(-2, -2)
 shape = SubResource("CircleShape2D_elckd")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
