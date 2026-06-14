@@ -343,10 +343,10 @@ shape = SubResource("WorldBoundaryShape2D_qlf6b")
 [node name="text" type="Node" parent="." unique_id=1949839195]
 
 [node name="Label" type="Label" parent="text" unique_id=829814369]
-offset_left = -5686.0
-offset_top = 1521.0
-offset_right = -5355.0
-offset_bottom = 1570.0
+offset_left = -5678.0
+offset_top = 1597.0
+offset_right = -5347.0
+offset_bottom = 1646.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 5

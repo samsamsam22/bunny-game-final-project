@@ -120,18 +120,21 @@ offset_bottom = 652.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 5
-text = "These guys kill you (bad)"
+text = "These guys can kill you, they're your
+first threat other then the void"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="text" unique_id=2003194800]
-offset_left = -2945.0
-offset_top = 1143.0
-offset_right = -2807.0
-offset_bottom = 1192.0
+offset_left = -2970.0
+offset_top = 1093.0
+offset_right = -2714.0
+offset_bottom = 1168.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 5
-text = "Spikes (also bad)"
+text = "Spikes also kill you by the way
+Hope you haven't learnt that one
+the hard way"
 
 [node name="Carrots" type="Node" parent="." unique_id=1949017223]
 

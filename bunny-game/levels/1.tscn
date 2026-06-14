@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_344tg"]
 [ext_resource type="Script" path="res://scripts/gamemanager.gd" id="2_1diu1"]
 [ext_resource type="PackedScene" uid="uid://bx4udgxond4af" path="res://scenes/player.tscn" id="3_j0jco"]
-[ext_resource type="Texture2D" uid="uid://b3oikwjj0r5tk" path="res://assets/sprites/ground_sprites_fin_fin.png" id="4_725xe"]
+[ext_resource type="Texture2D" uid="uid://b3oikwjj0r5tk" path="res://assets/sprites/ground_sprites.png" id="4_725xe"]
 [ext_resource type="PackedScene" uid="uid://coq1ss2a8fenr" path="res://scenes/killzone.tscn" id="5_6j3rm"]
 [ext_resource type="PackedScene" uid="uid://b6n3w78or1whw" path="res://scenes/carrot.tscn" id="6_sjybn"]
 [ext_resource type="PackedScene" uid="uid://dhop2f7mltemn" path="res://scenes/transition.tscn" id="9_u8tc4"]
@@ -329,28 +329,26 @@ text = "Press SPACE to dash
 Your direction depends on the keys you're pressing"
 
 [node name="Label3" type="Label" parent="text" unique_id=1075345705]
-offset_left = -1977.0
-offset_top = -535.0
-offset_right = -1680.0
-offset_bottom = -408.0
+offset_left = -1904.0
+offset_top = -474.0
+offset_right = -1607.0
+offset_bottom = -409.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 5
-text = "carrots can be collected
-every level has 3 carrots
-getting 3 gives you 1 star
-at the scoring page"
+text = "carrots are collectibles 
+you can collect throughout the level"
 
 [node name="Label4" type="Label" parent="text" unique_id=1003042016]
-offset_left = -366.0
-offset_top = -176.0
-offset_right = 120.0
-offset_bottom = -49.0
+offset_left = -415.0
+offset_top = -170.0
+offset_right = 172.0
+offset_bottom = -43.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 5
-text = "Finishing the level gives you another star
-And finishing the level in the given time limit gives you another
+text = "Try finishing every level having collected all 
+the carrots
 This was a very simple level with no gimmicks to let you 
 learn the controls, have fun"
 

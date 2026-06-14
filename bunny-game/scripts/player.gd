@@ -33,6 +33,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if !is_dashing and !can_dash:
 			can_dash = true
+			_update_dash_visuals()
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or !coyote_timer.is_stopped()):
@@ -44,11 +45,23 @@ func _physics_process(delta: float) -> void:
 	if !is_dashing:
 		var direction := Input.get_axis("move_left", "move_right")
 
+		#animations
 		if direction > 0:
 			player.flip_h = false
 		elif direction < 0:
 			player.flip_h = true
-
+		
+		if is_on_floor():
+			if direction == 0:
+				player.play("idle")
+			else:
+				player.play("run")
+		else:
+			if velocity.y <= 0:
+				player.play("jump")
+			else: 
+				player.play("fall")
+		
 		if direction:
 			velocity.x = direction * SPEED
 		else:
@@ -58,6 +71,12 @@ func _physics_process(delta: float) -> void:
 
 	if was_on_floor and !is_on_floor():
 		coyote_timer.start()
+		
+func _update_dash_visuals() -> void:
+	if can_dash:
+		modulate = Color("ffff")
+	else:
+		modulate = Color("cfd1d1ff")
 
 func _dash_logic(delta: float) -> void:
 	var input_dir: Vector2 = Vector2(
@@ -77,7 +96,8 @@ func _dash_logic(delta: float) -> void:
 		can_dash = false
 		is_dashing = true
 		dash_timer = DASH_TIME
-
+		
+		_update_dash_visuals()
 		velocity = final_dash_dir * DASH_AMT
 
 	if is_dashing:
