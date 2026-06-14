@@ -145,7 +145,6 @@ position = Vector2(-1114, 949)
 position = Vector2(-1076, 478)
 
 [node name="Enemies" type="Node" parent="." unique_id=555306550]
-script = ExtResource("4_qswil")
 
 [node name="sawbot" parent="Enemies" unique_id=244770658 instance=ExtResource("4_t6314")]
 position = Vector2(-2787, 782)
@@ -163,7 +162,6 @@ position = Vector2(-507, 1295)
 position = Vector2(-585, 846)
 
 [node name="Spike" type="Node" parent="." unique_id=670541934]
-script = ExtResource("4_qswil")
 
 [node name="spikes" parent="Spike" unique_id=35829626 instance=ExtResource("7_t6314")]
 position = Vector2(-2942, 1222)
@@ -295,7 +293,6 @@ scale = Vector2(1.709443, 1)
 shape = SubResource("WorldBoundaryShape2D_t6314")
 
 [node name="platforms" type="Node" parent="." unique_id=1699042558]
-script = ExtResource("4_qswil")
 
 [node name="platform" parent="platforms" unique_id=1679261519 instance=ExtResource("8_11a5i")]
 position = Vector2(-638, 531)

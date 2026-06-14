@@ -140,7 +140,6 @@ position = Vector2(-1557, 446)
 position = Vector2(-19, 85)
 
 [node name="replenish" type="Node" parent="." unique_id=847486047]
-script = ExtResource("3_uv2qy")
 
 [node name="dashreplenish" parent="replenish" unique_id=718052403 instance=ExtResource("5_ldnja")]
 position = Vector2(-6432, -36)
@@ -199,7 +198,6 @@ scale = Vector2(1.709443, 1)
 shape = SubResource("WorldBoundaryShape2D_qesyf")
 
 [node name="platforms" type="Node" parent="." unique_id=329575921]
-script = ExtResource("3_uv2qy")
 
 [node name="platform" parent="platforms" unique_id=1679261519 instance=ExtResource("7_tmm02")]
 position = Vector2(2285, 518)
@@ -221,8 +219,6 @@ autoplay = &"the lame way"
 position = Vector2(303, -895)
 
 [node name="Spike" type="Node" parent="." unique_id=18368641]
-unique_name_in_owner = true
-script = ExtResource("3_uv2qy")
 
 [node name="spikes" parent="Spike" unique_id=35829626 instance=ExtResource("9_nc42n")]
 position = Vector2(2566, -966)

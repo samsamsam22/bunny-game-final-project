@@ -39,8 +39,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
-radius = 20.165722
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(26.789993, 26.3278)
 
 [node name="Player" type="CharacterBody2D" unique_id=1292774031]
 collision_layer = 2
@@ -55,9 +55,9 @@ frame_progress = 0.84796304
 speed_scale = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=435126341]
-position = Vector2(-2, -29.000002)
-scale = Vector2(1.055097, 1.3478155)
-shape = SubResource("CircleShape2D_g2els")
+position = Vector2(-1.4999998, -26)
+scale = Vector2(1.3811127, 1.7472026)
+shape = SubResource("RectangleShape2D_g2els")
 
 [node name="coyotetimer" type="Timer" parent="." unique_id=255121271]
 wait_time = 0.15
