@@ -148,19 +148,19 @@ position = Vector2(-1076, 478)
 script = ExtResource("4_qswil")
 
 [node name="sawbot" parent="Enemies" unique_id=244770658 instance=ExtResource("4_t6314")]
-position = Vector2(-2784, 779)
+position = Vector2(-2787, 782)
 
 [node name="sawbot2" parent="Enemies" unique_id=573156448 instance=ExtResource("4_t6314")]
-position = Vector2(-2584, 1035)
+position = Vector2(-2582, 1038)
 
 [node name="sawbot3" parent="Enemies" unique_id=317500392 instance=ExtResource("4_t6314")]
-position = Vector2(-1213, 1292)
+position = Vector2(-1210, 1294)
 
 [node name="sawbot4" parent="Enemies" unique_id=4949697 instance=ExtResource("4_t6314")]
-position = Vector2(-511, 1292)
+position = Vector2(-507, 1295)
 
 [node name="sawbot5" parent="Enemies" unique_id=326664968 instance=ExtResource("4_t6314")]
-position = Vector2(-584, 844)
+position = Vector2(-585, 846)
 
 [node name="Spike" type="Node" parent="." unique_id=670541934]
 script = ExtResource("4_qswil")

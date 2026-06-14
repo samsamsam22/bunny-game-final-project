@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="bunny game"
-run/main_scene="uid://b3erhek44e1g2"
+run/main_scene="uid://chgb60dmq321k"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 run/size/mode=3
