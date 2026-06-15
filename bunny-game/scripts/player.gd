@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 
-# CELESTE DASH CELESTE DASH CELESTE DASH CELESTE DASH CELESTE DASH
+# Celeste dash
 const DASH_AMT: float = 1000
 const DASH_TIME: float = 0.16
 
