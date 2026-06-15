@@ -1,5 +1,6 @@
 extends Node2D
 
+# button type is just for the back button
 var current_level: int = 1
 var level_unlocked: int = 1
 var max_level: int = 5
