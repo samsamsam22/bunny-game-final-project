@@ -1,5 +1,6 @@
 extends Area2D
 
+# adds a level to the current level then unlocks that level by calling the current level, allowing you to go to another level
 func _on_body_entered(body: Node2D):
 	Levelselect.current_level += 1
 	Levelselect._unlock_level(Levelselect.current_level)

@@ -1,5 +1,6 @@
 extends Area2D
 
+#sets dash to true when collided with then resets in a few secs
 var active: bool = true
 
 func _on_body_entered(body: Node2D) -> void:
