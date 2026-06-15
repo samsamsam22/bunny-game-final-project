@@ -78,6 +78,7 @@ func _update_dash_visuals() -> void:
 	else:
 		player.play("dash")
 
+# retrieves what directions youre inputting in order to get what you need from the celeste dash
 func _dash_logic(delta: float) -> void:
 	var input_dir: Vector2 = Vector2(
 		Input.get_axis("move_left", "move_right"),
