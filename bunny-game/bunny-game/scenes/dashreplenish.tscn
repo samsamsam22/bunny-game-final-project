@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cj2yomvvhhu1p"]
+
+[ext_resource type="Script" uid="uid://byrn0xtlqv12c" path="res://scripts/dashreplenish.gd" id="1_ermfd"]
+[ext_resource type="Texture2D" uid="uid://dx0rhfvvrmt8k" path="res://assets/sprites/dashreplenish.png" id="2_ermfd"]
+[ext_resource type="AudioStream" uid="uid://dhrhk0iit5bbr" path="res://assets/sounds/rep_nab.wav" id="3_wimyw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wimyw"]
+radius = 20.024984
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wimyw"]
+atlas = ExtResource("2_ermfd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sgf6"]
+atlas = ExtResource("2_ermfd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m05ku"]
+atlas = ExtResource("2_ermfd")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr1l6"]
+atlas = ExtResource("2_ermfd")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu4xv"]
+atlas = ExtResource("2_ermfd")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7os83"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wimyw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sgf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m05ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr1l6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu4xv")
+}],
+"loop": false,
+"name": &"timer",
+"speed": 5.0
+}]
+
+[node name="dashreplenish" type="Area2D" unique_id=718052403]
+collision_mask = 2
+script = ExtResource("1_ermfd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2071031389]
+shape = SubResource("CircleShape2D_wimyw")
+
+[node name="replenishtimer" type="Timer" parent="." unique_id=1823892132]
+wait_time = 3.0
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1868061450]
+sprite_frames = SubResource("SpriteFrames_7os83")
+animation = &"timer"
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+
+[node name="nab" type="AudioStreamPlayer2D" parent="." unique_id=490228491]
+stream = ExtResource("3_wimyw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="replenishtimer" to="." method="_on_replenishtimer_timeout"]
