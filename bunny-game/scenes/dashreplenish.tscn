@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byrn0xtlqv12c" path="res://scripts/dashreplenish.gd" id="1_ermfd"]
 [ext_resource type="Texture2D" uid="uid://dx0rhfvvrmt8k" path="res://assets/sprites/dashreplenish.png" id="2_ermfd"]
+[ext_resource type="AudioStream" uid="uid://dhrhk0iit5bbr" path="res://assets/sounds/rep_nab.wav" id="3_wimyw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wimyw"]
 radius = 20.024984
@@ -71,6 +72,9 @@ animation = &"timer"
 autoplay = "default"
 frame = 3
 frame_progress = 1.0
+
+[node name="nab" type="AudioStreamPlayer2D" parent="." unique_id=490228491]
+stream = ExtResource("3_wimyw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="replenishtimer" to="." method="_on_replenishtimer_timeout"]

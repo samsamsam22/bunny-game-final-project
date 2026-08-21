@@ -19,6 +19,7 @@ run/size/mode=3
 [autoload]
 
 Levelselect="*uid://bre7ojjewmrpv"
+Gamemanager="*uid://c4libvdeix6bb"
 
 [display]
 

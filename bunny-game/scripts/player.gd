@@ -16,7 +16,9 @@ var is_dashing: bool = false
 var dash_dir: Vector2 = Vector2.RIGHT
 var dash_timer: float = 0.0
 
+@onready var hop = $hop
 @onready var player = $AnimatedSprite2D
+@onready var dash = $dash
 
 func _physics_process(delta: float) -> void:
 
@@ -38,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or !coyote_timer.is_stopped()):
 		velocity.y = JUMP_VELOCITY
+		hop.play()
 		
 
 	# Get the input direction and handle the movement/deceleration.
@@ -77,6 +80,7 @@ func _update_dash_visuals() -> void:
 		player.play("fall")
 	else:
 		player.play("dash")
+		dash.play()
 
 # retrieves what directions youre inputting in order to get what you need from the celeste dash
 func _dash_logic(delta: float) -> void:

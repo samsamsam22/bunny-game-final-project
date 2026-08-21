@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://d2pgqabgvkm2x" path="res://scripts/player.gd" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://3lt4xbbdfp0" path="res://assets/sprites/bnuysprites.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://d3ql7qw7mnrft" path="res://assets/sprites/bunnysprite.png" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://ddcefak1bixai" path="res://assets/sounds/hop.mp3" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://cqubwrakqh8ru" path="res://assets/sounds/dash.wav" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("2_qhqgy")
@@ -138,3 +140,9 @@ shape = SubResource("RectangleShape2D_g2els")
 [node name="coyotetimer" type="Timer" parent="." unique_id=255121271]
 wait_time = 0.15
 one_shot = true
+
+[node name="hop" type="AudioStreamPlayer2D" parent="." unique_id=1608830310]
+stream = ExtResource("4_dqkch")
+
+[node name="dash" type="AudioStreamPlayer2D" parent="." unique_id=567088257]
+stream = ExtResource("5_qlg0r")

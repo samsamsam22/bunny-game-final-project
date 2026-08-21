@@ -2,6 +2,7 @@ extends Area2D
 
 #sets dash to true when collided with then resets in a few secs
 var active: bool = true
+@onready var nab = $nab
 
 func _on_body_entered(body: Node2D) -> void:
 	if active:
@@ -12,6 +13,7 @@ func _on_body_entered(body: Node2D) -> void:
 		active = false
 		
 		$AnimatedSprite2D.play("timer")
+		nab.play()
 		$replenishtimer.start()
 
 func _on_replenishtimer_timeout() -> void:

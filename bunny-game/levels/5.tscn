@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cftj3yrhy2mf3"]
 
+[ext_resource type="Script" uid="uid://d4dakcfd6m75l" path="res://scripts/game.gd" id="1_gwtbk"]
 [ext_resource type="PackedScene" uid="uid://bx4udgxond4af" path="res://scenes/player.tscn" id="1_tb3jq"]
-[ext_resource type="Script" path="res://scripts/gamemanager.gd" id="2_gjmq4"]
+[ext_resource type="Script" uid="uid://c4libvdeix6bb" path="res://scripts/gamemanager.gd" id="2_gjmq4"]
 [ext_resource type="PackedScene" uid="uid://b6n3w78or1whw" path="res://scenes/carrot.tscn" id="2_ukse8"]
 [ext_resource type="PackedScene" uid="uid://dqqi85ksh5ow" path="res://scenes/tile_map_game.tscn" id="3_fn11t"]
 [ext_resource type="PackedScene" uid="uid://bxm421fwebbgm" path="res://scenes/platform.tscn" id="4_wsa5m"]
@@ -11,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bf1ggfco76472" path="res://assets/sprites/placeholder bunny sprite.png" id="8_dc30n"]
 [ext_resource type="PackedScene" uid="uid://coq1ss2a8fenr" path="res://scenes/killzone.tscn" id="9_l2qoq"]
 [ext_resource type="PackedScene" uid="uid://2jl3g7rlbid7" path="res://scenes/finish_level.tscn" id="11_hod6x"]
+[ext_resource type="PackedScene" uid="uid://dd4qg8mhechax" path="res://scenes/playerui.tscn" id="12_hod6x"]
+[ext_resource type="PackedScene" uid="uid://dhop2f7mltemn" path="res://scenes/transition.tscn" id="14_7rw4q"]
 
 [sub_resource type="Animation" id="Animation_dc30n"]
 length = 0.001
@@ -350,10 +353,12 @@ _data = {
 &"the fast one": SubResource("Animation_gwtbk")
 }
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8jvi3"]
-distance = -1.0
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7rw4q"]
+normal = Vector2(-0.00069951307, -0.99999976)
+distance = -79.93153
 
 [node name="5" type="Node2D" unique_id=1640669554]
+script = ExtResource("1_gwtbk")
 
 [node name="Player" parent="." unique_id=1292774031 instance=ExtResource("1_tb3jq")]
 z_index = 5
@@ -381,6 +386,8 @@ position = Vector2(-7316, -13943)
 [node name="gamemanager" type="Node" parent="." unique_id=353472567]
 unique_name_in_owner = true
 script = ExtResource("2_gjmq4")
+
+[node name="UI" parent="." unique_id=714296936 instance=ExtResource("12_hod6x")]
 
 [node name="TileMap" parent="." unique_id=420695825 instance=ExtResource("3_fn11t")]
 position = Vector2(-4899, 1347)
@@ -603,13 +610,16 @@ texture = ExtResource("8_dc30n")
 region_enabled = true
 region_rect = Rect2(0, 0, 112, 138)
 
-[node name="killzone" parent="." unique_id=783299780 instance=ExtResource("9_l2qoq")]
-position = Vector2(-4899, -12663)
-scale = Vector2(58.879997, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1372747472]
-scale = Vector2(1.709443, 1)
-shape = SubResource("WorldBoundaryShape2D_8jvi3")
-
 [node name="FinishLevel" parent="." unique_id=549451238 instance=ExtResource("11_hod6x")]
 position = Vector2(-5606, -14007)
+
+[node name="transition" parent="." unique_id=1986358168 instance=ExtResource("14_7rw4q")]
+
+[node name="killzone2" parent="." unique_id=783299780 instance=ExtResource("9_l2qoq")]
+position = Vector2(-7279.0005, -13339)
+scale = Vector2(-0.55401456, 6.4609013)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2" unique_id=585161400]
+position = Vector2(0, -62.3752)
+scale = Vector2(136.91833, 1.5377247)
+shape = SubResource("WorldBoundaryShape2D_7rw4q")
