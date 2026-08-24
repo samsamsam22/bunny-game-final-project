@@ -3,7 +3,6 @@ extends Label
 var time_elapsed := 0.0
 
 func _process(delta: float) -> void:
-	
 	time_elapsed += delta
 	text = str(time_elapsed)
 
@@ -11,3 +10,4 @@ func _process(delta: float) -> void:
 	var seconds := int(time_elapsed) % 60
 	
 	text = "%02d:%02d" % [minutes, seconds]
+	

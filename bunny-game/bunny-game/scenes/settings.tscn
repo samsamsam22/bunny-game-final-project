@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dhop2f7mltemn" path="res://scenes/transition.tscn" id="1_5p8wc"]
 [ext_resource type="Script" uid="uid://8o0iws5dpdot" path="res://scripts/settings.gd" id="1_r6d6q"]
 [ext_resource type="PackedScene" uid="uid://dqqi85ksh5ow" path="res://scenes/tile_map_game.tscn" id="2_6wm04"]
+[ext_resource type="AudioStream" uid="uid://dhrhk0iit5bbr" path="res://assets/sounds/rep_nab.wav" id="4_f4mfi"]
 
 [sub_resource type="GDScript" id="GDScript_r6d6q"]
 script/source = "extends CheckButton
@@ -55,6 +56,38 @@ offset_bottom = 582.0
 theme_override_font_sizes/font_size = 50
 text = "Back"
 
+[node name="HSlider" type="HSlider" parent="." unique_id=1632467427]
+offset_left = 619.0
+offset_top = 96.0
+offset_right = 998.0
+offset_bottom = 311.0
+max_value = 2.0
+step = 0.001
+value = 1.0
+
+[node name="Label2" type="Label" parent="." unique_id=1804988838]
+offset_left = 213.0
+offset_top = 160.0
+offset_right = 619.0
+offset_bottom = 229.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 50
+text = "Master Volume"
+
+[node name="Button" type="Button" parent="." unique_id=780920764]
+offset_left = 563.0
+offset_top = 261.0
+offset_right = 649.0
+offset_bottom = 344.0
+text = "check "
+
+[node name="test" type="AudioStreamPlayer2D" parent="Button" unique_id=1897544467]
+stream = ExtResource("4_f4mfi")
+
 [connection signal="toggled" from="fullscreencontrol" to="fullscreencontrol" method="_on_toggled"]
 [connection signal="pressed" from="back" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
