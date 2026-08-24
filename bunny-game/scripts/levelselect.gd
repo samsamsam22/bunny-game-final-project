@@ -5,6 +5,8 @@ var current_level: int = 1
 var level_unlocked: int = 1
 var max_level: int = 5
 var button_type = null
+var level_scores: Dictionary = {}
+var level_times: Dictionary = {}
 
 # When level to unlock is bigger then the unlocked level amount, the unlocked level amount will 
 # set itself to be equal to level to unlock 
@@ -19,7 +21,12 @@ func _load_level(level_to_load: int) -> String:
 		return "res://scenes/mainmenu.tscn"
 	return str("res://levels/", level_to_load, ".tscn")
 
-# back
+func add_level_score(level: int, score: int) -> void:
+	if score > level_scores.get(level, 0):
+		level_scores[level] = score
+
+func get_level_score(level: int) -> int:
+	return level_scores.get(level, 0)
 
 func _on_back_pressed():
 	button_type = "back"

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dd4qg8mhechax"]
 
 [ext_resource type="Script" uid="uid://cg7amgrbbp2m0" path="res://scripts/gameui.gd" id="1_5vk06"]
-[ext_resource type="Script" uid="uid://gerglgqthfqx" path="res://scripts/stopwatch.gd" id="1_djnkt"]
 
 [node name="UI" type="CanvasLayer" unique_id=714296936]
 script = ExtResource("1_5vk06")
@@ -15,16 +14,6 @@ offset_bottom = 40.0
 [node name="score_label" type="Label" parent="Control" unique_id=209745367]
 layout_mode = 0
 offset_left = 10.0
-offset_right = 160.0
-offset_bottom = 45.0
-theme_override_font_sizes/font_size = 32
-
-[node name="stopwatch" type="Label" parent="Control" unique_id=276704496]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 45.0
-offset_right = 160.0
-offset_bottom = 114.0
-theme_override_font_sizes/font_size = 50
-text = "0:00"
-script = ExtResource("1_djnkt")
+offset_right = 182.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 40
